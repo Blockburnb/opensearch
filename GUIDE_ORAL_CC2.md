@@ -170,7 +170,7 @@ PUT /logs-demo
 }
 ```
 
-**Insérer dei données de logs** :
+**Insérer dei données de logs v1** :
 ```
 POST /logs-demo/_bulk
 { "create": { "_index": "logs-demo", "_id": "1" } }
@@ -189,6 +189,17 @@ POST /logs-demo/_bulk
 { "timestamp": "2024-06-01T10:30:00Z", "level": "INFO", "service": "api-gateway", "message": "API request processed", "user": "jane_smith" }
 { "create": { "_index": "logs-demo", "_id": "8" } }
 { "timestamp": "2024-06-01T10:35:00Z", "level": "ERROR", "service": "payment-service", "message": "Connection refused to payment gateway", "user": "john_doe" }
+```
+
+**Insérer des données de logs v2** :
+```
+POST demo_logs/_doc
+{
+  "date": "2025-06-01T10:00:00",
+  "niveau": "INFO",
+  "service": "WEB",
+  "message": "Utilisateur connecté"
+}
 ```
 
 **Vérifier les données** :
